@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JSON Blockly</title>
+	<script src="../blockly_compressed.js"></script>
+	<script src="../blocks_compressed.js"></script>
+	<script src="../msg/js/en.js"></script>
+		<script>Blockly.Blocks['json_base'] = {
+  init: function() {
+    this.jsonInit({
+  "message0": "{ %1 %2 }",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+})}};Blockly.Blocks['json_value'] = {
+  init: function() {
+    this.jsonInit({
+  "type": "json_value",
+  "message0": "%1 : %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": " "
+    },
+    {
+      "type": "input_value",
+      "name": "NAME",
+      "check": [
+        "Boolean",
+        "Number",
+        "String",
+        "Array"
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+})}};</script>
+	<script>
+		var toolbox = {
+  "kind": "categoryToolbox",
+  "contents": [
+    {
+      "kind": "category",
+      "name": "JSON",
+      "contents": [
+        {
+          "kind": "block",
+          "type": "json_base"
+        },
+        {
+          "kind": "block",
+          "type": "json_value"
+        },
+      ]
+    },
+    {
+      "kind": "category",
+      "name": "Values",
+      "contents": [
+        {
+          "kind": "block",
+          "type": "logic_boolean"
+        },
+        {
+          "kind": "block",
+          "type": "math_number"
+        },
+        {
+          "kind": "block",
+          "type": "text"
+        },
+        {
+          "kind": "block",
+          "type": "logic_null"
+        },
+        {
+          "kind": "block",
+          "type": "lists_create_with"
+        },
+  ]
+}]}
+	</script>
+	<script>const codelabGenerator = new Blockly.Generator('JSON');</script>
+</head>
+<body>
+	<h1>JSON Blockly</h1>
+  <h3><a href='../index.html'>ru</a></h3>
+	<div id="blocklyDiv" style="height: 900px; width: 1000px;"></div>
+	<script>var workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});playground.addGenerator('Codelab', codelabGenerator)</script>
+
+</body>
+</html>
